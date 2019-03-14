@@ -6,7 +6,7 @@ DigitalOut led1(LED1);
 
 #define STOP_FLAG 1
 
-// Blink function toggles the led in a long running loop
+// Blink function toggles the LED in a long running loop
 void blink(DigitalOut *led) {
     while (!ThisThread::flags_wait_any_for(STOP_FLAG, 1000)) {
         *led = !*led;
